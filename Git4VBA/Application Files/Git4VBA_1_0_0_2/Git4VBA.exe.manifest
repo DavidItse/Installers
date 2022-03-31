@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Git4VBA.exe" version="1.0.0.2" publicKeyToken="cfeb41ae38f60802" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Git4VBA" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Git4VBA.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+             If you want to change the Windows User Account Control level replace the 
+             requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel element will disable file and registry virtualization. 
+            Remove this element if your application requires this virtualization for backwards
+            compatibility.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Git4VBA.exe" size="314264">
+      <assemblyIdentity name="Git4VBA" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>4CpMztxSG5oacYFfWlspTdKTAJLy1ud+4+zTkjl5fJw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Git4VBA.exe.config" size="187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+CM46OnHRrXZXNLMx7+U3V3iubiYL//d8hGOR13lDhU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of the Windows versions that this application has been tested on
+           and is designed to work with. Uncomment the appropriate elements
+           and Windows will automatically select the most compatible environment. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=MSI\david" issuerKeyHash="87329c7ebe1c730a3ecb4d3447f7d03fdeb4e5b6" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>u0qfQWW2UPIu2V/qoEOwisvdRo15JQw40FRRB1aZ03k=</DigestValue></Reference></SignedInfo><SignatureValue>K9nyct8YxyWOPMq2C8XWdrXsO/uY7IqSGNP3fM6C4ncCBVve9ueXSWTRZP9Os7CN/wEdpzEFyl/DzRtXOqLOLjaJfm88yhgoMXV9fDgE6IAKuBDeKDOFwhWsWCPq6V7glx80kw4BA0Lw5jdAfU0LdW1CD+zG7yQK+Xu0jblY2rk=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>tdk9uQxp0XSXc8m1Dz7wAwqfwtGhGsbu3RLuoXRtTGoudadw9xXRDDMht1Ak8vNCF97X0Z/48/XQzbWB4gT59BB219Gjv0wcnNJNxC4Nr4gSwIUEhG0GG6meCX8Pn6PCqIjltAM2d+m2m8Dyf8MfJhVmXeRzXQopSN+6B7Or0f0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="79d39956075154d0380c25798d46ddcb8ab043a0ea5fd92ef250b665419f4abb" Description="" Url=""><as:assemblyIdentity name="Git4VBA.exe" version="1.0.0.2" publicKeyToken="cfeb41ae38f60802" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=MSI\david</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>noJXk5XFs9ewaclw8M1W7dloCnAIj/Y4PIQc5DmtO5U=</DigestValue></Reference></SignedInfo><SignatureValue>qlbEDo8S8KckAWZkzd5h0oJ6kp6tB2jlMAf1dp0f1c85WPcpcloD+S6WPMi/1j2TNhjOt70irkKQApuUgfGxYFW5pNoB8RuRle1tkj3i/EKh7gw3FCuHUa7mtF0++G2f2NMDZfWNO+rh2cRD9hWE6Bt4CyK1Df5mHQQ0ezuJsoM=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>tdk9uQxp0XSXc8m1Dz7wAwqfwtGhGsbu3RLuoXRtTGoudadw9xXRDDMht1Ak8vNCF97X0Z/48/XQzbWB4gT59BB219Gjv0wcnNJNxC4Nr4gSwIUEhG0GG6meCX8Pn6PCqIjltAM2d+m2m8Dyf8MfJhVmXeRzXQopSN+6B7Or0f0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBvTCCASagAwIBAgIQKmEF9SjQaI9KCk68W2CSMzANBgkqhkiG9w0BAQsFADAdMRswGQYDVQQDHhIATQBTAEkAXABkAGEAdgBpAGQwHhcNMjIwMzMwMjM1ODM3WhcNMjMwMzMxMDU1ODM3WjAdMRswGQYDVQQDHhIATQBTAEkAXABkAGEAdgBpAGQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALXZPbkMadF0l3PJtQ8+8AMKn8LRoRrG7t0S7qF0bUxqLnWncPcV0QwzIbdQJPLzQhfe19Gf+PP10M21geIE+fQQdtfRo79MHJzSTcQuDa+IEsCFBIRtBhupngl/D5+jwqiI5bQDNnfptpvA8n/DHyYVZl3kc10KKUjfugezq9H9AgMBAAEwDQYJKoZIhvcNAQELBQADgYEAGUOjayY4azRZFL6tdHBj18Sre8btuVNYjZZ7cSSymR7YR6zxDemaHDGXOE5drbhRw6C/1/H0pSemOc5Q0PjR7SZbZ79D9djyU3DC1jKOskqrSQu2MVJ1UIasWf9KyiZj6dyLjXXufZ0MurpfnVUN4pYi2uxYEz/UbHbXTIxJ4xs=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

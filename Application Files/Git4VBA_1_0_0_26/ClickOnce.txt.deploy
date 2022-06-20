@@ -1,0 +1,73 @@
+﻿Attribute VB_Name = "ClickOnce"
+
+Public Function CheckForUpdate(Optional Check As Boolean = True) As Boolean
+    On Error GoTo ExitGracefully
+    If Dir(ApplicationPath & "\Version.txt") = vbNullString Then
+        Exit Function
+    End If
+    If inStr(ApplicationPath,"InstallFolder") <> 0 And inStr(ApplicationPath,"GitFolder") = 0 Then
+        Dim inURL As String
+        Dim outpath As String
+        Dim objHttp As Object
+        Dim version As String
+        Dim pFSO As New Scripting.FileSystemObject
+        Dim pTS As Scripting.TextStream
+        inURL = "VersionURL"
+        Set objHttp = CreateObject("MSXML2.ServerXMLHTTP")
+        Call objHttp.Open("GET", inURL, False)
+        Call objHttp.Send("")
+        
+        Dim strFilename As String: strFilename = ApplicationPath & "\Version.txt"
+        Dim strFileContent As String
+        Dim iFile As Integer: iFile = FreeFile
+        Open strFilename For Input As #iFile
+        version = Input(LOF(iFile), iFile)
+        Close #iFile
+    
+        If Trim(Replace(objHttp.responseText, Chr(10), "")) <> Trim(Replace(version, Chr(10), "")) Then
+            If IIf(Check = True, MsgBox("There is an update available. Would you like to update now?", vbYesNo), vbNo) = vbYes Then
+                UpdateApp
+            End If
+        End If
+    End If
+ExitGracefully:
+    Exit Function
+End Function
+
+Public Sub UpdateApp()
+    Dim inURL As String
+    Dim outpath As String
+    Dim objHttp As Object
+    Dim pFSO As New Scripting.FileSystemObject
+    Dim pTS As Scripting.TextStream
+    inURL = "SetupUrl"
+    outpath = Environ("TEMP") & "\Setup.bat"
+        
+    'Delete any previous file downloads
+    On Error Resume Next
+        pFSO.DeleteFile outpath, True
+    On Error GoTo 0
+
+    'setup and download the latest file
+    Set objHttp = CreateObject("MSXML2.ServerXMLHTTP")
+    Call objHttp.Open("GET", inURL, False)
+    Call objHttp.Send("")
+
+    'Write the file to disk
+    'Debug.Print outPath
+    Set pTS = pFSO.OpenTextFile(outpath, ForWriting, True)
+    pTS.Write Replace(Replace(objHttp.responseText, vbCr, vbCrLf), vbLf, vbCrLf)
+    pTS.Close
+    Set pTS = Nothing
+    
+    Shell outpath, vbNormalFocus
+
+    On Error Resume Next
+       If Application.Name = "Microsoft Excel" Then
+        ThisWorkbook.Saved = True
+        ThisWorkbook.Close
+    Else
+        DoCmd.Quit
+    End If
+
+End Sub

@@ -10,18 +10,18 @@ if /i "%answer:~,1%" EQU "N" exit /b
 echo Please type Y for Yes or N for No
 goto :eof
 :InstallIt
-if not exist "C:\Program Files\THREDrDB\" mkdir "C:\Program Files\THREDrDB\"
+if not exist "%AppData%\THREDrDB\" mkdir "%AppData%\THREDrDB\"
 echo Downloading update...
-powershell.exe -WindowStyle Hidden -Command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/yourusername/thredrdb-updates/raw/main/THREDrDB-v1.0.1.zip', '%TEMP%\THREDrDB-v1.0.1.zip')" || goto :Error
+powershell.exe -WindowStyle Hidden -Command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/DavidItse/Installers/raw/refs/heads/main/THREDrDB/THREDrDBSetup.zip', '%TEMP%\THREDrDBSetup.zip')" || goto :Error
 echo Extracting update...
-powershell.exe -WindowStyle Hidden -Command "Expand-Archive -Path '%TEMP%\THREDrDB-v1.0.1.zip' -DestinationPath 'C:\Program Files\THREDrDB\' -Force" || goto :Error
+powershell.exe -WindowStyle Hidden -Command "Expand-Archive -Path '%TEMP%\THREDrDBSetup.zip' -DestinationPath '%AppData%\THREDrDB\' -Force" || goto :Error
 echo Cleaning up...
-del "%TEMP%\THREDrDB-v1.0.1.zip" > nul 2>&1
+del "%TEMP%\THREDrDBSetup.zip" > nul 2>&1
 echo Registering THREDrDB add-in with Excel...
 echo Set objExcel = CreateObject("Excel.Application") > "%TEMP%\RegisterXLL.vbs"
 echo objExcel.Visible = False >> "%TEMP%\RegisterXLL.vbs"
 echo objExcel.Workbooks.Add >> "%TEMP%\RegisterXLL.vbs"
-echo objExcel.AddIns.Add("C:\Program Files\THREDrDB\THREDrDB-packed.xll").Installed = True >> "%TEMP%\RegisterXLL.vbs"
+echo objExcel.AddIns.Add("%AppData%\THREDrDB\ThredrDB_add-in-AddIn64-packed.xll").Installed = True >> "%TEMP%\RegisterXLL.vbs"
 echo objExcel.Quit >> "%TEMP%\RegisterXLL.vbs"
 cscript "%TEMP%\RegisterXLL.vbs" > nul 2>&1
 del "%TEMP%\RegisterXLL.vbs" > nul 2>&1

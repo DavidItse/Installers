@@ -19,10 +19,9 @@ echo Cleaning up...
 del "%TEMP%\THREDrDB-v1.0.3.zip" > nul 2>&1
 echo Registering THREDrDB add-in with Excel...
 echo Set objExcel = CreateObject("Excel.Application") > "%TEMP%\RegisterXLL.vbs"
-echo objExcel.Visible = False >> "%TEMP%\RegisterXLL.vbs"
+echo objExcel.Visible = True >> "%TEMP%\RegisterXLL.vbs"
 echo objExcel.Workbooks.Add >> "%TEMP%\RegisterXLL.vbs"
 echo objExcel.AddIns.Add("C:\Users\david\AppData\Roaming\ThredrDB\ThredrDB_add-in-AddIn64-packed.xll").Installed = True >> "%TEMP%\RegisterXLL.vbs"
-echo objExcel.Quit >> "%TEMP%\RegisterXLL.vbs"
 cscript "%TEMP%\RegisterXLL.vbs" > nul 2>&1
 del "%TEMP%\RegisterXLL.vbs" > nul 2>&1
 echo Registration complete!

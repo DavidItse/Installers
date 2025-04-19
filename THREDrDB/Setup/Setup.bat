@@ -28,7 +28,7 @@ del "%TEMP%\RegisterXLL.vbs" > nul 2>&1
 echo Registration complete!
 echo Adding entry to Add/Remove Programs...
 reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\THREDrDB /v DisplayName /t REG_SZ /d "THREDrDB" /f > nul
-reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\THREDrDB /v UninstallString /t REG_SZ /d "%APPDATA%\ThredrDB\Uninstall.exe" /f > nul
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\THREDrDB /v UninstallString /t REG_SZ /d "%APPDATA%\ThredrDB\UninstallTHREDr.exe" /f > nul
 reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\THREDrDB /v Publisher /t REG_SZ /d "Thredr LLC" /f > nul
 reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\THREDrDB /v DisplayVersion /t REG_SZ /d "1.0.3" /f > nul
 reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\THREDrDB /v InstallLocation /t REG_SZ /d "%APPDATA%\ThredrDB" /f > nul

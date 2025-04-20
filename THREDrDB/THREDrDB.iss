@@ -13,7 +13,7 @@ PrivilegesRequired=lowest
 [Files]
 Source: "C:\Users\david\source\repos\THREDrDBForExcel\THREDrDB_add-in\bin\Release\ThredrDB_add-in-AddIn64-packed.xll"; DestDir: "{app}"
 Source: "C:\Users\david\source\repos\Installers\THREDrDB\Setup\Setup.bat"; DestDir: "{app}"
-
+Source: "C:\Users\david\source\repos\Installers\THREDrDB\Version.txt"; DestDir: "{app}"
 [Run]
 Filename: "cscript"; Parameters: """{app}\RegisterXLL.vbs"""; Flags: runhidden; Description: "Register THREDrDB XLL"
 

@@ -21,6 +21,8 @@ Filename: "cscript"; Parameters: """{app}\RegisterXLL.vbs"""; Flags: runhidden; 
 procedure CurStepChanged(CurStep: TSetupStep);
 var
   VBSFile: String;
+  InstallerPath: String;
+  DestPath: String;
 begin
   if CurStep = ssInstall then
   begin
@@ -51,6 +53,15 @@ begin
       '    End If' + #13#10 +
       'Next', False);
   end;
+  if CurStep = ssPostInstall then
+  begin
+    InstallerPath := ExpandConstant('{srcexe}'); 
+    DestPath := ExpandConstant('{app}\SetupTHREDr.exe'); 
+    if not FileCopy(InstallerPath, DestPath, False) then
+    begin
+      MsgBox('Failed to copy the installer to the installation directory.', mbError, MB_OK);
+    end;
+  end;
 end;
 
 procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
@@ -58,5 +69,7 @@ begin
   if CurUninstallStep = usUninstall then
   begin
     DeleteFile(ExpandConstant('{app}\RegisterXLL.vbs'));
+	DeleteFile(ExpandConstant('{app}\Version.txt')); 
+	DeleteFile(ExpandConstant('{app}\SetupTHREDr.exe')); 
   end;
 end;

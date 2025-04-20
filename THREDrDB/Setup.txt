@@ -4,12 +4,7 @@ Title THREDrDB Update
 cls
 echo Updating THREDrDB to the latest version...
 echo.
-set /p answer=Do you want to continue (Y/N)? 
-if /i "%answer:~,1%" EQU "Y" goto InstallIt
-if /i "%answer:~,1%" EQU "N" exit /b
-echo Please type Y for Yes or N for No
-goto :eof
-timeout 10 > nul
+timeout 50 > nul
 :InstallIt
 if not exist "C:\Users\david\AppData\Roaming\ThredrDB" mkdir "C:\Users\david\AppData\Roaming\ThredrDB"
 echo Downloading update...

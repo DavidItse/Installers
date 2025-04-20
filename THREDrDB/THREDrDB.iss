@@ -71,5 +71,6 @@ begin
     DeleteFile(ExpandConstant('{app}\RegisterXLL.vbs'));
 	DeleteFile(ExpandConstant('{app}\Version.txt')); 
 	DeleteFile(ExpandConstant('{app}\SetupTHREDr.exe')); 
+	DeleteFile(ExpandConstant('{app}\UpdateTHREDr.exe')); 
   end;
 end;

@@ -56,7 +56,7 @@ begin
   if CurStep = ssPostInstall then
   begin
     InstallerPath := ExpandConstant('{srcexe}'); 
-    DestPath := ExpandConstant('{app}\SetupTHREDr.exe'); 
+    DestPath := ExpandConstant('{app}\UpdateTHREDr.exe'); 
     if not FileCopy(InstallerPath, DestPath, False) then
     begin
       MsgBox('Failed to copy the installer to the installation directory.', mbError, MB_OK);
@@ -70,7 +70,6 @@ begin
   begin
     DeleteFile(ExpandConstant('{app}\RegisterXLL.vbs'));
 	DeleteFile(ExpandConstant('{app}\Version.txt')); 
-	DeleteFile(ExpandConstant('{app}\SetupTHREDr.exe')); 
 	DeleteFile(ExpandConstant('{app}\UpdateTHREDr.exe')); 
   end;
 end;

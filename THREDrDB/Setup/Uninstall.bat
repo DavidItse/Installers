@@ -15,7 +15,7 @@ echo Set objExcel = CreateObject("Excel.Application") > "%TEMP%\UnregisterXLL.vb
 echo objExcel.Visible = False >> "%TEMP%\UnregisterXLL.vbs"
 echo objExcel.Workbooks.Add >> "%TEMP%\UnregisterXLL.vbs"
 echo For Each addIn In objExcel.AddIns >> "%TEMP%\UnregisterXLL.vbs"
-echo     If InStr(LCase(addIn.FullName), LCase("THREDrDB-packed.xll")) > 0 Then addIn.Installed = False >> "%TEMP%\UnregisterXLL.vbs"
+echo     If InStr(LCase(addIn.FullName), LCase("ThredrDB_add-in-AddIn64-packed.xll")) > 0 Then addIn.Installed = False >> "%TEMP%\UnregisterXLL.vbs"
 echo Next >> "%TEMP%\UnregisterXLL.vbs"
 echo objExcel.Quit >> "%TEMP%\UnregisterXLL.vbs"
 cscript "%TEMP%\UnregisterXLL.vbs" > nul 2>&1

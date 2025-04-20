@@ -26,7 +26,7 @@ reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\THREDrDB /v Uni
 reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\THREDrDB /v Publisher /t REG_SZ /d "Thredr LLC" /f > nul
 reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\THREDrDB /v DisplayVersion /t REG_SZ /d "1.0.3" /f > nul
 reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\THREDrDB /v InstallLocation /t REG_SZ /d "%APPDATA%\ThredrDB" /f > nul
-echo Update complete! Please restart Excel to load the new version.
+echo Update complete!
 echo This window will close in 5 seconds...
 timeout 5 > nul
 exit /b

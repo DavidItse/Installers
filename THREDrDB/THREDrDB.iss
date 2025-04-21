@@ -50,7 +50,19 @@ begin
       MsgBox('The ZIP file could not be downloaded. Please check your internet connection and try again.', mbError, MB_OK);
       Exit;
     end;
-
+	
+	if Exec('powershell.exe', 
+      '-WindowStyle Hidden -Command "Stop-Process -Name EXCEL -Force -ErrorAction SilentlyContinue"', 
+      '', SW_HIDE, ewWaitUntilTerminated, ResultCode) then
+    begin
+      
+      MsgBox('Terminated all Excel processes to ensure a clean installation.', mbInformation, MB_OK);
+    end
+    else
+    begin
+      MsgBox('Warning: Could not terminate Excel processes (Error code: ' + IntToStr(ResultCode) + '). Installation will proceed, but there might be file conflicts if Excel is running.', mbInformation, MB_OK);
+    end;
+	
     if not Exec('powershell.exe', 
       '-WindowStyle Hidden -Command "Expand-Archive -Path ''' + ZipPath + ''' -DestinationPath ''' + ExpandConstant('{app}') + ''' -Force"', 
       '', SW_HIDE, ewWaitUntilTerminated, ResultCode) then

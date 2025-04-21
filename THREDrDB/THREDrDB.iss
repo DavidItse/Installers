@@ -50,13 +50,13 @@ begin
       MsgBox('The ZIP file could not be downloaded. Please check your internet connection and try again.', mbError, MB_OK);
       Exit;
     end;
-	
+	MsgBox('Excel will be closed to complete the installation.', mbInformation, MB_OK);
 	if Exec('powershell.exe', 
       '-WindowStyle Hidden -Command "Stop-Process -Name EXCEL -Force -ErrorAction SilentlyContinue"', 
       '', SW_HIDE, ewWaitUntilTerminated, ResultCode) then
     begin
       
-      MsgBox('Terminated all Excel processes to ensure a clean installation.', mbInformation, MB_OK);
+      
     end
     else
     begin
@@ -113,15 +113,6 @@ begin
       '    End If' + #13#10 +
       'Next', False);
   end;
-  if CurStep = ssPostInstall then
-  begin
-    InstallerPath := ExpandConstant('{srcexe}'); 
-    DestPath := ExpandConstant('{app}\SetupTHREDr.exe'); 
-    if not FileCopy(InstallerPath, DestPath, False) then
-    begin
-      MsgBox('Failed to copy the installer to the installation directory.', mbError, MB_OK);
-    end;
-  end;
 end;
 
 procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
@@ -131,5 +122,6 @@ begin
     DeleteFile(ExpandConstant('{app}\RegisterXLL.vbs'));
     DeleteFile(ExpandConstant('{app}\Version.txt'));
     DeleteFile(ExpandConstant('{app}\ThredrDB_add-in-AddIn64-packed.xll'));
+	DeleteFile(ExpandConstant('{app}\SetupTHREDr.exe'));
   end;
 end;

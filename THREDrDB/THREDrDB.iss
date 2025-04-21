@@ -117,7 +117,7 @@ begin
   begin
     InstallerPath := ExpandConstant('{srcexe}'); 
     DestPath := ExpandConstant('{app}\SetupTHREDr.exe'); 
-    if not FileCopy(InstallerPath, DestPath, False) then
+    if not FileCopy(InstallerPath, DestPath, False) and not FileExists(DestPath) then
     begin
       MsgBox('Failed to copy the installer to the installation directory.', mbError, MB_OK);
     end;

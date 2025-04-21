@@ -123,5 +123,6 @@ begin
     DeleteFile(ExpandConstant('{app}\Version.txt'));
     DeleteFile(ExpandConstant('{app}\ThredrDB_add-in-AddIn64-packed.xll'));
 	DeleteFile(ExpandConstant('{app}\SetupTHREDr.exe'));
+	DeleteFile(ExpandConstant('{app}\SetupTHREDr.zip'));
   end;
 end;

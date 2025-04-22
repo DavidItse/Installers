@@ -1,6 +1,6 @@
 [Setup]
 AppName=THREDrDB
-AppVersion=1.0.3
+AppVersion=|ver|
 DefaultDirName={userappdata}\ThredrDB
 DefaultGroupName=THREDrDB
 OutputDir=C:\Users\david\source\repos\Installers\THREDrDB
@@ -35,10 +35,10 @@ begin
       Exit;
     end;
    
-    ZipPath := TempDir + '\THREDrDB-v1.0.3.zip';
+    ZipPath := TempDir + '\THREDrDB-v|ver|.zip';
 
     if not Exec('powershell.exe', 
-      '-WindowStyle Hidden -Command "(New-Object System.Net.WebClient).DownloadFile(''https://github.com/DavidItse/Installers/raw/refs/heads/main/THREDrDB/THREDrDB-v1.0.3.zip'', ''' + ZipPath + ''')"', 
+      '-WindowStyle Hidden -Command "(New-Object System.Net.WebClient).DownloadFile(''https://github.com/DavidItse/Installers/raw/refs/heads/main/THREDrDB/THREDrDB-v|ver|.zip'', ''' + ZipPath + ''')"', 
       '', SW_HIDE, ewWaitUntilTerminated, ResultCode) then
     begin
       MsgBox('Failed to download the ZIP file from GitHub. Error code: ' + IntToStr(ResultCode), mbError, MB_OK);
